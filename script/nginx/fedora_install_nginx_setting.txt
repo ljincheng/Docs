@@ -10,3 +10,6 @@ firewall-cmd --permanent --add-service=http
 firewall-cmd --permanent --add-service=https
 firewall-cmd --reload
 
+
+启动时注意要以配置的用户来启动服务
+sudo nginx
