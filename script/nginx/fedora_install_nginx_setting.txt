@@ -1,0 +1,15 @@
+
+##安装完后要设置以下的权限　
+
+##1、开启安全限制
+
+sudo setsebool -P httpd_can_network_connect 1
+
+## 2.开启外部访问端口
+firewall-cmd --permanent --add-service=http
+firewall-cmd --permanent --add-service=https
+firewall-cmd --reload
+
+
+启动时注意要以配置的用户来启动服务
+sudo nginx
