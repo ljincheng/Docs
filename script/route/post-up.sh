@@ -77,13 +77,13 @@ if [ ${os} == 'Darwin' ];then
 ## 查看默认路由netstat -r中的default
 ## 删除添加的路由方法：sudo route delete yyy.yyy.yyy.yy
 
-net_gateway=`netstat -nr |grep 'default' |awk '{print $2}' |awk 'NR==2{print}'`
+net_gateway=`netstat -nr |grep 'default' |awk '{print $2}' |awk 'NR==1{print}'`
 
 echo "当前默认网关:${net_gateway}"
 ## net_gateway=10.50.41.254
 else
 
-net_gateway=`netstat -nr |grep '0.0.0.0' | awk '{print $2}' | awk 'NR==2{print}'`
+net_gateway=`netstat -nr |grep '0.0.0.0' | awk '{print $2}' | awk 'NR==1{print}'`
 echo "当前默认网关:${net_gateway}"
 fi
 
